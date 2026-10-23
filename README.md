@@ -1,40 +1,32 @@
-# Лабораторная работа №1: Таблица Умножения (JavaFX)
+# Лаба 1 по ООП (JavaFX)
 
-Десктопное приложение для тренировки таблицы умножения, написанное на Java и JavaFX.
 
-## Стек технологий
-- **Язык**: Java 21+ (проверено на JDK 25)
-- **Фреймворк**: JavaFX 21 (`javafx-controls`, `javafx-fxml`)
-- **Сборщик**: Maven (с встроенным `mvnw`)
+## 1. Таблица умножения (в корне)
+Генератор примеров из таблицы умножения.
+* Показывает рандомный пример на умножение.
+* Пользователь вводит ответ в текстовое поле и жмет «Проверить».
+* Выводит диалоговое окно (Alert): верно или неверно (с показом правильного ответа).
+* **Как запустить:** запустить `run.bat` в корне или выполнить в терминале:
+  ```bash
+  .\mvnw.cmd javafx:run
+  ```
 
-## Структура проекта
-```
-d:\OOP Java\JavaLab1\
-├── pom.xml
-├── mvnw / mvnw.cmd
-├── src/
-│   └── main/
-│       ├── java/
-│       │   ├── module-info.java
-│       │   └── io/jfxdevelop/multiplicationtable/
-│       │       ├── HelloApplication.java
-│       │       └── HelloController.java
-│       └── resources/
-│           └── io/jfxdevelop/multiplicationtable/
-│               └── hello-view.fxml
-└── .mvn/wrapper/
-```
+## 2. DogAndCat (`/DogAndCat`)
+Многоэкранное приложение на FXML (`javafx-archetype-fxml`) с переключением экранов:
+* Экран 1: картинка с собакой и кнопка «Switch to Secondary View».
+* Экран 2: картинка с котом и кнопка «Switch to Primary View».
+* Переключение сцен через метод `App.setRoot()`.
+* **Как запустить:** запустить `run_DogAndCat.bat` из корня (или `run.bat` внутри папки `DogAndCat`).
 
-## Как запустить
+## 3. SimpleJavaFX (`/SimpleJavaFX`)
+Интерфейс собран полностью на чистом Java-коде без FXML:
+* Кнопка «Show Info» и пустой Label.
+* По нажатию на кнопку в Label выводится текущая версия Java и JavaFX (`SystemInfo.java`).
+* Компоновка через `VBox` по центру `StackPane`.
+* **Как запустить:** запустить `run_SimpleJavaFX.bat` из корня (или `run.bat` внутри папки `SimpleJavaFX`).
 
-### Способ 1: Через IntelliJ IDEA
-1. Откройте IntelliJ IDEA.
-2. Выберите **File -> Open...** и укажите папку `d:\OOP Java\JavaLab1`.
-3. Дождитесь импорта Maven-зависимостей.
-4. Откройте `src/main/java/io/jfxdevelop/multiplicationtable/HelloApplication.java` и нажмите зелёную стрелку **Run**.
+---
 
-### Способ 2: Через командную строку (Maven Wrapper)
-В терминале в папке проекта:
-```powershell
-.\mvnw.cmd javafx:run
-```
+### Требования
+* Java 17+ (JDK)
+* Maven отдельно ставить не нужно — во все папки уже встроен Maven Wrapper (`mvnw`).
